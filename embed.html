@@ -18,24 +18,99 @@
 				border: none;
 				display: block;
 			}
+			#zoneViewer {
+				position: fixed;
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				z-index: 1000;
+				flex-direction: column;
+				background: #000;
+			}
+			#zoneFrame {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				border: none;
+				display: block;
+			}
 		</style>
 	</head>
 	
 	<body>
-		<iframe id="viewer"></iframe>
 		<script>
 			const params = new URLSearchParams(window.location.search);
-			const type = params.get("t");
-			const id = params.get("id");
-			const iframe = document.getElementById("viewer");
-			
-			if (true) {
+			const type = Number(params.get("t"));
+			const id = Number(params.get("id"));
+
+			switch(type) {
+				case 0:
+					loadWDBG();
+					break;
+				case 1:
+					loadGN();
+					break;
+				case 2:
+					loadCMG();
+					break;
+			}
+
+			function loadWDBG() {
+				const iframe = document.getElementById("viewer");
 				fetch("json/wdbg.json").then(res => res.json()).then(data => {
-					const entry = data.find(e => e.id === id);
-					iframe.src = entry?.link || "about:blank";
+					const game = data.find(game => game.id === id);
+					iframe.src = game?.link || "about:blank";
 				}).catch(error => {
 					console.error(error);
 				});
+			}
+
+			async function loadGN() {
+				const zonesURL = "https://cdn.jsdelivr.net/gh/gn-math/assets/zones.json";
+				const coverURL = "https://cdn.jsdelivr.net/gh/%67%6e%2d%6d%61%74%68/covers@main";
+				const htmlURL = "https://cdn.jsdelivr.net/gh/%67%6e%2d%6d%61%74%68/html@main";
+				
+				let zoneViewer = document.createElement("div");
+				zoneViewer.id = "zoneViewer";
+				document.body.appendChild(zoneViewer);
+
+				let zoneFrame = document.createElement("iframe");
+				zoneFrame.id = "zoneFrame";
+				document.body.appendChild(zoneFrame);
+				
+				const response = await fetch(zonesURL + "?t=" + Date.now());
+				const data = await response.json();
+				const zone = data.find(zone => zone.id == id);
+				if(zone.url.startsWith("http")) {
+					window.open(zone.url, "_blank");
+				} else {
+					const url = zone.url.replace("{COVER_URL}", coverURL).replace("{HTML_URL}", htmlURL);
+					fetch(url + "?t=" + Date.now()).then(response => response.text()).then(html => {
+						zoneFrame = document.createElement("iframe");
+						zoneViewer.appendChild(zoneFrame);
+						zoneFrame.contentDocument.open();
+						zoneFrame.contentDocument.write(html);
+						zoneFrame.contentDocument.close();
+						zoneViewer.style.display = "block";
+						try {
+							const url = new URL(window.location);
+							url.searchParams.set('id', zone.id);
+							history.pushState(null, '', url.toString());
+						} catch(error) {
+							console.error(error);
+						}
+
+					}).catch(error => {
+						console.error(error);
+						alert(error);
+					});
+				}
+			}
+
+			function loadCMG() {
 			}
 		</script>
 	</body>

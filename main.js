@@ -14,13 +14,13 @@ function createBtn(id, title, url) {
 		switch(id) {
 			case 0:
 				loadWDBG();
-			break;
+				break;
 			case 1:
 				loadGN();
-			break;
+				break;
 			case 2:
 				loadCMG();
-			break;
+				break;
 		}
  	}
 	global.navbar.appendChild(btn);
@@ -61,7 +61,7 @@ async function loadWDBG() {
 		.then(response => response.json())
 		.then(data => {
 			data.forEach(box => {
-				createBox(`temp/${box.id}.png`, box.title, `embed.html?id=${box.id}&t=0`);
+				createBox(`temp/${box.id}.png`, box.title, `embed.html?t=0&id=${box.id}`);
 			});
 		})
 		.catch(error => console.error(error));
@@ -73,9 +73,7 @@ async function loadGN() {
 		const zones = await response.json();
 		zones.forEach(zone => {
 			const imgSrc = zone.cover.replace("{COVER_URL}", "https://cdn.jsdelivr.net/gh/gn-math/covers@main");
-			const title = zone.name;
-			const url = `embed.html?id=${zone.id}&t=1`;
-			createBox(imgSrc, title, url)
+			createBox(imgSrc, zone.name, `embed.html?t=1&id=${zone.id}`)
 		});
 	} catch (error) {
 		console.error(error);
@@ -85,24 +83,18 @@ async function loadGN() {
 async function loadCMG() {
 	try {
 		const response = await fetch("json/cmatgame_games_with_levels.json");
-		const cmatgame_games_with_levels = await response.json();
+		const data = await response.json();
 		
 		let ids = [
-			...(cmatgame_games_with_levels.trendy || []),
-			...(cmatgame_games_with_levels.top9 || []),
-		].map((id) => String(id).trim());
+			...data.trendy,
+			...data.top9,
+		]
 		ids = [...new Set(ids)];
 		
-		const boxes = ids
-			.map((id) => cmatgame_games_with_levels.game.find((g) => String(g.id) === id))
-			.filter(Boolean)
+		const games = ids.map((id) => data.game.find((game) => game.id == id))
 			
-		boxes.forEach(game => {
-			const imgSrc = `https://www.coolmathgames.com/${game.si}`;
-			const title = game.title;
-			const url = `embed.html?id=${game.id}&t=2`;
-			
-			createBox(imgSrc, title, url);
+		games.forEach(game => {
+			createBox(`https://www.coolmathgames.com/${game.si}`, game.title, `embed.html?t=2&id=${game.id}`);
 		});
 	} catch (error) {
 		console.error(error);
