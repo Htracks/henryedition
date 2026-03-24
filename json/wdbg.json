@@ -1,556 +1,538 @@
 [
-  {
-    "id": "85",
-    "title": "10 Minutes Till Dawn",
-    "tags": [
-      "Beta"
-    ]
-  },
-  {
-    "id": "1",
-    "title": "2048",
-    "link": "https://wdbgames.github.io/server1/2048/"
-  },
-  {
-    "id": "2",
-    "title": "ADOFAI",
-    "tags": [
-      "Strategy"
-    ]
-  },
-  {
-    "id": "3",
-    "title": "Angry Birds",
-    "tags": [
-      "Strategy"
-    ]
-  },
-  {
-    "id": "4",
-    "title": "Appel",
-    "tags": [
-      "Platformer"
-    ]
-  },
-  {
-    "id": "5",
-    "title": "Asteroids",
-    "tags": []
-  },
-  {
-    "id": "6",
-    "title": "Babel Tower",
-    "tags": [
-      "Idle"
-    ]
-  },
-  {
-    "id": "7",
-    "title": "Baldi's Basics",
-    "tags": []
-  },
-  {
-    "id": "8",
-    "title": "Basket Random",
-    "tags": [
-      "Sports"
-    ]
-  },
-  {
-    "id": "9",
-    "title": "Battleship",
-    "tags": [
-      "Strategy"
-    ]
-  },
-  {
-    "id": "10",
-    "title": "Big Flappy Tower Tiny Square",
-    "tags": [
-      "Platformer",
-      "Featured"
-    ]
-  },
-  {
-    "id": "11",
-    "title": "Big Tower Tiny Square",
-    "tags": [
-      "Platformer"
-    ]
-  },
-  {
-    "id": "12",
-    "title": "Big Tower Tiny Square 2",
-    "tags": [
-      "Platformer"
-    ]
-  },
-  {
-    "id": "13",
-    "title": "Bitlife",
-    "tags": [
-      "Strategy"
-    ]
-  },
-  {
-    "id": "14",
-    "title": "Boxing Random",
-    "tags": [
-      "Sports"
-    ]
-  },
-  {
-    "id": "15",
-    "title": "Brotato",
-    "tags": [
-      "Strategy"
-    ]
-  },
-  {
-    "id": "16",
-    "title": "Champion Island",
-    "tags": [
-      "Sports"
-    ]
-  },
-  {
-    "id": "17",
-    "title": "CircloO",
-    "tags": [
-      "Platformer"
-    ]
-  },
-  {
-    "id": "18",
-    "title": "ClassiCube",
-    "tags": [
-      "Sandbox"
-    ]
-  },
-  {
-    "id": "19",
-    "title": "Cookie Clicker",
-    "tags": [
-      "Idle",
-      "Featured"
-    ]
-  },
-  {
-    "id": "20",
-    "title": "Countries Quiz",
-    "tags": [
-      "Strategy"
-    ]
-  },
-  {
-    "id": "21",
-    "title": "Crazy Cattle 3D",
-    "tags": []
-  },
-  {
-    "id": "22",
-    "title": "Death Run",
-    "tags": []
-  },
-  {
-    "id": "23",
-    "title": "Dino",
-    "tags": []
-  },
-  {
-    "id": "24",
-    "title": "Dodge",
-    "tags": []
-  },
-  {
-    "id": "83",
-    "title": "Doodle Baseball",
-    "tags": [
-      "Featured"
-    ]
-  },
-  {
-    "id": "25",
-    "title": "Doodle Jump",
-    "tags": []
-  },
-  {
-    "id": "26",
-    "title": "Doom",
-    "tags": []
-  },
-  {
-    "id": "27",
-    "title": "Flappy Bird",
-    "tags": []
-  },
-  {
-    "id": "87",
-    "title": "Google Snake",
-    "tags": [
-      "Beta"
-    ]
-  },
-  {
-    "id": "29",
-    "title": "Granny",
-    "tags": [
-      "Strategy"
-    ]
-  },
-  {
-    "id": "30",
-    "title": "Handulum+",
-    "tags": []
-  },
-  {
-    "id": "31",
-    "title": "HexaClicker",
-    "tags": [
-      "Idle"
-    ]
-  },
-  {
-    "id": "32",
-    "title": "Idle Breakout",
-    "tags": [
-      "Idle"
-    ]
-  },
-  {
-    "id": "33",
-    "title": "Idle Dice",
-    "tags": [
-      "Idle"
-    ]
-  },
-  {
-    "id": "34",
-    "title": "Jelly Mario",
-    "tags": [
-      "Platformer"
-    ]
-  },
-  {
-    "id": "35",
-    "title": "Just a Platformer",
-    "tags": [
-      "Platformer"
-    ]
-  },
-  {
-    "id": "36",
-    "title": "Level Devil",
-    "tags": [
-      "Platformer"
-    ]
-  },
-  {
-    "id": "37",
-    "title": "Magic Cat Academy",
-    "tags": []
-  },
-  {
-    "id": "38",
-    "title": "Minesweeper",
-    "tags": [
-      "Strategy"
-    ]
-  },
-  {
-    "id": "39",
-    "title": "Mini Golf",
-    "tags": []
-  },
-  {
-    "id": "40",
-    "title": "Moto X3M",
-    "tags": []
-  },
-  {
-    "id": "41",
-    "title": "Mr. Mine",
-    "tags": [
-      "Idle"
-    ]
-  },
-  {
-    "id": "84",
-    "title": "N-gon",
-    "tags": [
-      "Beta"
-    ]
-  },
-  {
-    "id": "42",
-    "title": "OvO",
-    "tags": [
-      "Platformer"
-    ]
-  },
-  {
-    "id": "43",
-    "title": "Pen Football",
-    "tags": [
-      "Sports"
-    ]
-  },
-  {
-    "id": "45",
-    "title": "Pixels Filling Squares",
-    "tags": [
-      "Idle"
-    ]
-  },
-  {
-    "id": "86",
-    "title": "Plactions",
-    "tags": [
-      "Platformer"
-    ]
-  },
-  {
-    "id": "47",
-    "title": "Planet Clicker",
-    "tags": [
-      "Idle"
-    ]
-  },
-  {
-    "id": "48",
-    "title": "Plug Away",
-    "tags": []
-  },
-  {
-    "id": "49",
-    "title": "Plug Away 2",
-    "tags": []
-  },
-  {
-    "id": "50",
-    "title": "PolyTrack",
-    "tags": [
-      "Featured"
-    ]
-  },
-  {
-    "id": "51",
-    "title": "Retro Bowl",
-    "tags": [
-      "Sports",
-      "Featured"
-    ]
-  },
-  {
-    "id": "52",
-    "title": "Retro Flight Sim",
-    "tags": []
-  },
-  {
-    "id": "53",
-    "title": "Rooftop Snipers 2",
-    "tags": []
-  },
-  {
-    "id": "54",
-    "title": "Run 3",
-    "tags": [
-      "Beta"
-    ]
-  },
-  {
-    "id": "55",
-    "title": "Sand Game",
-    "tags": [
-      "Sandbox"
-    ]
-  },
-  {
-    "id": "56",
-    "title": "Sandboxels",
-    "tags": [
-      "Sandbox"
-    ]
-  },
-  {
-    "id": "81",
-    "title": "Sandspiel",
-    "tags": [
-      "Sandbox"
-    ]
-  },
-  {
-    "id": "57",
-    "title": "Sandtris",
-    "tags": [
-      "Strategy"
-    ]
-  },
-  {
-    "id": "58",
-    "title": "Scratch Flight Sim",
-    "tags": []
-  },
-  {
-    "id": "59",
-    "title": "Slope",
-    "tags": [
-      "Featured"
-    ]
-  },
-  {
-    "id": "60",
-    "title": "Slow Roads",
-    "tags": [
-      "Featured"
-    ]
-  },
-  {
-    "id": "61",
-    "title": "Snow Rider 3D",
-    "tags": [
-      "Featured"
-    ]
-  },
-  {
-    "id": "62",
-    "title": "Soccer Random",
-    "tags": [
-      "Sports"
-    ]
-  },
-  {
-    "id": "82",
-    "title": "Space Waves",
-    "tags": [
-      "Featured"
-    ]
-  },
-  {
-    "id": "63",
-    "title": "Spacebar Clicker",
-    "tags": [
-      "Idle"
-    ]
-  },
-  {
-    "id": "64",
-    "title": "Stack",
-    "tags": []
-  },
-  {
-    "id": "65",
-    "title": "Stickman Hook",
-    "tags": []
-  },
-  {
-    "id": "66",
-    "title": "Surf",
-    "tags": [
-      "Featured"
-    ]
-  },
-  {
-    "id": "67",
-    "title": "Tag",
-    "tags": []
-  },
-  {
-    "id": "68",
-    "title": "The Final Earth 2",
-    "tags": [
-      "Idle"
-    ]
-  },
-  {
-    "id": "70",
-    "title": "Townscaper",
-    "tags": [
-      "Sandbox"
-    ]
-  },
-  {
-    "id": "89",
-    "title": "Tung Tung Wave Trials",
-    "tags": [
-      "Strategy"
-    ]
-  },
-  {
-    "id": "71",
-    "title": "Tunnel Rush",
-    "tags": [
-      "Featured"
-    ]
-  },
-  {
-    "id": "72",
-    "title": "TWHG",
-    "tags": [
-      "Strategy"
-    ]
-  },
-  {
-    "id": "73",
-    "title": "TWHG 2",
-    "tags": [
-      "Strategy"
-    ]
-  },
-  {
-    "id": "74",
-    "title": "Undertale",
-    "tags": [
-      "Beta"
-    ]
-  },
-  {
-    "id": "75",
-    "title": "Universal Paperclips",
-    "tags": [
-      "Idle"
-    ]
-  },
-  {
-    "id": "76",
-    "title": "Volley Random",
-    "tags": [
-      "Sports"
-    ]
-  },
-  {
-    "id": "88",
-    "title": "Voxel",
-    "tags": [
-      "Sandbox"
-    ]
-  },
-  {
-    "id": "77",
-    "title": "Wordle",
-    "tags": [
-      "Strategy"
-    ]
-  },
-  {
-    "id": "78",
-    "title": "Worldle",
-    "tags": [
-      "Strategy"
-    ]
-  },
-  {
-    "id": "79",
-    "title": "Emulator",
-    "tags": [
-      "Featured"
-    ]
-  },
-  {
-    "id": "80",
-    "title": "Flash",
-    "tags": [
-      "Featured"
-    ]
-  }
+	{
+	  "id":"85",
+		"title":"10 Minutes Till Dawn",
+		"link":"https://wdbgames.github.io/server3/10_minutes_till_dawn/"
+	},
+	{
+		"id":"1",
+		"title":"2048",
+		"link":"https://wdbgames.github.io/server1/2048/"
+	},
+	{
+		"id":"2",
+		"title":"ADOFAI",
+		"link":"https://wdbgames.github.io/server1/a_dance_of_fire_and_ice/"
+	},
+	{
+		"id":"3",
+		"title":"Angry Birds",
+		"link":"https://wdbgames.github.io/server3/angry_birds/"
+	},
+	{
+		"id":"4",
+		"title":"Appel",
+		"link":"https://wdbgames.github.io/server1/appel/"
+	},
+	{
+		"id":"5",
+		"title":"Asteroids",
+		"link":"https://wdbgames.github.io/server1/asteroids/"
+	},
+	{
+		"id":"6",
+		"title":"Babel Tower",
+		"link":"https://wdbgames.github.io/server1/babel_tower/"
+	},
+	{
+		"id":"7",
+		"title":"Baldi's Basics",
+		"link":"https://wdbgames.github.io/server1/baldis_basics/"
+	},
+	{
+		"id":"8",
+		"title":"Basket Random",
+		"link":"https://wdbgames.github.io/server1/basket_random/"
+	},
+	{
+		"id":"9",
+		"title":"Battleship",
+		"link":"https://wdbgames.github.io/server1/battleship/"
+	},
+	{
+		"id":"10",
+		"title":"Big Flappy Tower Tiny Square",
+		"link":"https://wdbgames.github.io/server1/big_flappy_tower_tiny_square/"
+	},
+	{
+		"id":"11",
+		"title":"Big Tower Tiny Square",
+		"link":"https://wdbgames.github.io/server1/big_tower_tiny_square/"
+	},
+	{
+		"id":"12",
+		"title":"Big Tower Tiny Square 2",
+		"link":"https://wdbgames.github.io/server1/big_tower_tiny_square_2/"
+	},
+	{
+		"id":"13",
+		"title":"Bitlife",
+		"link":"https://wdbgames.github.io/server1/bitlife/"
+	},
+	{
+		"id":"14",
+		"title":"Boxing Random",
+		"link":"https://wdbgames.github.io/server1/boxing_random/"
+	},
+	{
+		"id":"15",
+		"title":"Brotato",
+		"link":"https://wdbgames.github.io/server2/brotato/"
+	},
+	{
+		"id":"16",
+		"title":"Champion Island",
+		"link":"https://wdbgames.github.io/server3/champion_island/"
+	},
+	{
+		"id":"17",
+		"title":"CircloO",
+		"link":"https://wdbgames.github.io/server1/circloo/"
+	},
+	{
+		"id":"18",
+		"title":"ClassiCube",
+		"link":"https://wdbgames.github.io/server1/classicube/"
+	},
+	{
+		"id":"19",
+		"title":"Cookie Clicker",
+		"link":"https://wdbgames.github.io/server1/cookie_clicker/"
+	},
+	{
+		"id":"20",
+		"title":"Countries Quiz",
+		"link":"https://wdbgames.github.io/server1/countries_quiz/"
+	},
+	{
+		"id":"21",
+		"title":"Crazy Cattle 3D",
+		"link":"https://wdbgames.github.io/server2/crazy_cattle/"
+	},
+	{
+		"id":"22",
+		"title":"Death Run",
+		"link":"https://wdbgames.github.io/server1/death_run/"
+	},
+	{
+		"id":"23",
+		"title":"Dino",
+		"link":"https://wdbgames.github.io/server1/dino/"
+	},
+	{
+		"id":"24",
+		"title":"Dodge",
+		"link":"https://wdbgames.github.io/server1/dodge/"
+	},
+	{
+		"id":"83",
+		"title":"Doodle Baseball",
+		"link":"https://wdbgames.github.io/server1/doodle_baseball/"
+	},
+	{
+		"id":"25",
+		"title":"Doodle Jump",
+		"link":"https://wdbgames.github.io/server1/doodle_jump/"
+	},
+	{
+		"id":"26",
+		"title":"Doom",
+		"link":"https://wdbgames.github.io/server1/doom/"
+	},
+	{
+		"id":"27",
+		"title":"Flappy Bird",
+		"link":"https://wdbgames.github.io/server1/flappy_bird/"
+	},
+	{
+		"id":"87",
+		"title":"Google Snake",
+		"link":"https://wdbgames.github.io/server1/google_snake/"
+	},
+	{
+		"id":"29",
+		"title":"Granny",
+		"tags":[
+			"Strategy"
+		]
+	},
+	{
+		"id":"30",
+		"title":"Handulum+",
+		"tags":[
+			
+		]
+	},
+	{
+		"id":"31",
+		"title":"HexaClicker",
+		"tags":[
+			"Idle"
+		]
+	},
+	{
+		"id":"32",
+		"title":"Idle Breakout",
+		"tags":[
+			"Idle"
+		]
+	},
+	{
+		"id":"33",
+		"title":"Idle Dice",
+		"tags":[
+			"Idle"
+		]
+	},
+	{
+		"id":"34",
+		"title":"Jelly Mario",
+		"tags":[
+			"Platformer"
+		]
+	},
+	{
+		"id":"35",
+		"title":"Just a Platformer",
+		"tags":[
+			"Platformer"
+		]
+	},
+	{
+		"id":"36",
+		"title":"Level Devil",
+		"tags":[
+			"Platformer"
+		]
+	},
+	{
+		"id":"37",
+		"title":"Magic Cat Academy",
+		"tags":[
+			
+		]
+	},
+	{
+		"id":"38",
+		"title":"Minesweeper",
+		"tags":[
+			"Strategy"
+		]
+	},
+	{
+		"id":"39",
+		"title":"Mini Golf",
+		"tags":[
+			
+		]
+	},
+	{
+		"id":"40",
+		"title":"Moto X3M",
+		"tags":[
+			
+		]
+	},
+	{
+		"id":"41",
+		"title":"Mr. Mine",
+		"tags":[
+			"Idle"
+		]
+	},
+	{
+		"id":"84",
+		"title":"N-gon",
+		"tags":[
+			"Beta"
+		]
+	},
+	{
+		"id":"42",
+		"title":"OvO",
+		"tags":[
+			"Platformer"
+		]
+	},
+	{
+		"id":"43",
+		"title":"Pen Football",
+		"tags":[
+			"Sports"
+		]
+	},
+	{
+		"id":"45",
+		"title":"Pixels Filling Squares",
+		"tags":[
+			"Idle"
+		]
+	},
+	{
+		"id":"86",
+		"title":"Plactions",
+		"tags":[
+			"Platformer"
+		]
+	},
+	{
+		"id":"47",
+		"title":"Planet Clicker",
+		"tags":[
+			"Idle"
+		]
+	},
+	{
+		"id":"48",
+		"title":"Plug Away",
+		"tags":[
+			
+		]
+	},
+	{
+		"id":"49",
+		"title":"Plug Away 2",
+		"tags":[
+			
+		]
+	},
+	{
+		"id":"50",
+		"title":"PolyTrack",
+		"tags":[
+			"Featured"
+		]
+	},
+	{
+		"id":"51",
+		"title":"Retro Bowl",
+		"tags":[
+			"Sports",
+			"Featured"
+		]
+	},
+	{
+		"id":"52",
+		"title":"Retro Flight Sim",
+		"tags":[
+			
+		]
+	},
+	{
+		"id":"53",
+		"title":"Rooftop Snipers 2",
+		"tags":[
+			
+		]
+	},
+	{
+		"id":"54",
+		"title":"Run 3",
+		"tags":[
+			"Beta"
+		]
+	},
+	{
+		"id":"55",
+		"title":"Sand Game",
+		"tags":[
+			"Sandbox"
+		]
+	},
+	{
+		"id":"56",
+		"title":"Sandboxels",
+		"tags":[
+			"Sandbox"
+		]
+	},
+	{
+		"id":"81",
+		"title":"Sandspiel",
+		"tags":[
+			"Sandbox"
+		]
+	},
+	{
+		"id":"57",
+		"title":"Sandtris",
+		"tags":[
+			"Strategy"
+		]
+	},
+	{
+		"id":"58",
+		"title":"Scratch Flight Sim",
+		"tags":[
+			
+		]
+	},
+	{
+		"id":"59",
+		"title":"Slope",
+		"tags":[
+			"Featured"
+		]
+	},
+	{
+		"id":"60",
+		"title":"Slow Roads",
+		"tags":[
+			"Featured"
+		]
+	},
+	{
+		"id":"61",
+		"title":"Snow Rider 3D",
+		"tags":[
+			"Featured"
+		]
+	},
+	{
+		"id":"62",
+		"title":"Soccer Random",
+		"tags":[
+			"Sports"
+		]
+	},
+	{
+		"id":"82",
+		"title":"Space Waves",
+		"tags":[
+			"Featured"
+		]
+	},
+	{
+		"id":"63",
+		"title":"Spacebar Clicker",
+		"tags":[
+			"Idle"
+		]
+	},
+	{
+		"id":"64",
+		"title":"Stack",
+		"tags":[
+			
+		]
+	},
+	{
+		"id":"65",
+		"title":"Stickman Hook",
+		"tags":[
+			
+		]
+	},
+	{
+		"id":"66",
+		"title":"Surf",
+		"tags":[
+			"Featured"
+		]
+	},
+	{
+		"id":"67",
+		"title":"Tag",
+		"tags":[
+			
+		]
+	},
+	{
+		"id":"68",
+		"title":"The Final Earth 2",
+		"tags":[
+			"Idle"
+		]
+	},
+	{
+		"id":"70",
+		"title":"Townscaper",
+		"tags":[
+			"Sandbox"
+		]
+	},
+	{
+		"id":"89",
+		"title":"Tung Tung Wave Trials",
+		"tags":[
+			"Strategy"
+		]
+	},
+	{
+		"id":"71",
+		"title":"Tunnel Rush",
+		"tags":[
+			"Featured"
+		]
+	},
+	{
+		"id":"72",
+		"title":"TWHG",
+		"tags":[
+			"Strategy"
+		]
+	},
+	{
+		"id":"73",
+		"title":"TWHG 2",
+		"tags":[
+			"Strategy"
+		]
+	},
+	{
+		"id":"74",
+		"title":"Undertale",
+		"tags":[
+			"Beta"
+		]
+	},
+	{
+		"id":"75",
+		"title":"Universal Paperclips",
+		"tags":[
+			"Idle"
+		]
+	},
+	{
+		"id":"76",
+		"title":"Volley Random",
+		"tags":[
+			"Sports"
+		]
+	},
+	{
+		"id":"88",
+		"title":"Voxel",
+		"tags":[
+			"Sandbox"
+		]
+	},
+	{
+		"id":"77",
+		"title":"Wordle",
+		"tags":[
+			"Strategy"
+		]
+	},
+	{
+		"id":"78",
+		"title":"Worldle",
+		"tags":[
+			"Strategy"
+		]
+	},
+	{
+		"id":"79",
+		"title":"Emulator",
+		"tags":[
+			"Featured"
+		]
+	},
+	{
+		"id":"80",
+		"title":"Flash",
+		"tags":[
+			"Featured"
+		]
+	}
 ]
