@@ -111,10 +111,12 @@
 
 			async function loadCMG() {
 				const frame = document.getElementById("frame");
+				const response = await fetch("json/cmatgame_games_with_levels.json");
+				const data = await response.json();
+				const game = data.game.find(game => game.id == id);
+
 				try {
-					const response = await fetch("json/cmatgame_games_with_levels.json");
-					const data = await response.json();
-					game = data.game.find(game => game.id == id);
+					const url = "https://www.coolmathgames.com/0-" + game.alias + "/play";
 					const urlResponse = await fetch(url);
 					if (!urlResponse.ok) {
 						throw new Error();
