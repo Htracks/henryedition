@@ -41,6 +41,7 @@
 	</head>
 	
 	<body>
+		<iframe id="frame"></iframe>
 		<script>
 			const params = new URLSearchParams(window.location.search);
 			const type = Number(params.get("t"));
@@ -59,10 +60,10 @@
 			}
 
 			function loadWDBG() {
-				const iframe = document.getElementById("viewer");
+				const frame = document.getElementById("frame");
 				fetch("json/wdbg.json").then(res => res.json()).then(data => {
-					const game = data.find(game => game.id === id);
-					iframe.src = game?.link || "about:blank";
+					const game = data.find(game => game.id == id);
+					frame.src = game?.link;
 				}).catch(error => {
 					console.error(error);
 				});
@@ -77,9 +78,7 @@
 				zoneViewer.id = "zoneViewer";
 				document.body.appendChild(zoneViewer);
 
-				let zoneFrame = document.createElement("iframe");
-				zoneFrame.id = "zoneFrame";
-				document.body.appendChild(zoneFrame);
+				let zoneFrame = document.getElementById("frame");
 				
 				const response = await fetch(zonesURL + "?t=" + Date.now());
 				const data = await response.json();
@@ -97,8 +96,8 @@
 						zoneViewer.style.display = "block";
 						try {
 							const url = new URL(window.location);
-							url.searchParams.set('id', zone.id);
-							history.pushState(null, '', url.toString());
+							url.searchParams.set("id", zone.id);
+							history.pushState(null, "", url.toString());
 						} catch(error) {
 							console.error(error);
 						}
@@ -110,7 +109,37 @@
 				}
 			}
 
-			function loadCMG() {
+			async function loadCMG() {
+				const frame = document.getElementById("frame");
+				try {
+					const response = await fetch("json/cmatgame_games_with_levels.json");
+					const data = await response.json();
+					game = data.game.find(game => game.id == id);
+					const urlResponse = await fetch(url);
+					if (!urlResponse.ok) {
+						throw new Error();
+					}
+
+					const html = await urlResponse.text();
+					const parser = new DOMParser();
+					const doc = parser.parseFromString(html, "text/html");
+					const base = doc.querySelector("base");
+					if (!base) {
+						throw new Error();
+					}
+					
+					const baseHref = base.getAttribute("href");
+					const path = baseHref.startsWith("http") ? baseHref : "https:" + baseHref;
+					frame.src = path + "index.html";
+				} catch(error) {
+					console.warn(error);
+					try {
+						frame.src = "https://" + game.alias + "1.coolmathgames.com";
+					} catch(error) {
+						console.error(error);
+						alert(error);
+					}
+				}
 			}
 		</script>
 	</body>

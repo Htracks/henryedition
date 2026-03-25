@@ -5,6 +5,11 @@ const global = {
 }
 
 function createBtn(id, title, url) {
+	if(url) {
+		// SETTINGS LOGIC
+		return;
+	}
+
 	const btn = document.createElement("button");
 	btn.textContent = title;
 	btn.className = "navbar-button";
@@ -24,10 +29,6 @@ function createBtn(id, title, url) {
 		}
  	}
 	global.navbar.appendChild(btn);
-			  
-	if(url) {
-		// SETTINGS LOGIC
-	}
 }
 
 function createBox(imgSrc, title, url) {
