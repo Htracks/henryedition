@@ -34,6 +34,7 @@ body {
 	background: var(--background-button);
 	color: var(--text);
 	padding: 8px;
+	cursor: pointer;
 }
 
 .navbar-button:hover {
@@ -52,7 +53,7 @@ body {
 .container {
 	padding: 16px;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
 	gap: 8px;
 	background: var(--background-container);
 }

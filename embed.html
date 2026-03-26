@@ -117,6 +117,11 @@
 
 				try {
 					const url = "https://www.coolmathgames.com/0-" + game.alias + "/play";
+					console.log(url);
+					if(url == null) {
+						throw new Error();
+					}
+
 					const urlResponse = await fetch(url);
 					if (!urlResponse.ok) {
 						throw new Error();
@@ -135,12 +140,7 @@
 					frame.src = path + "index.html";
 				} catch(error) {
 					console.warn(error);
-					try {
-						frame.src = "https://" + game.alias + "1.coolmathgames.com";
-					} catch(error) {
-						console.error(error);
-						alert(error);
-					}
+					frame.src = "https://" + game.alias + ".coolmathgames.com";
 				}
 			}
 		</script>

@@ -20,9 +20,7 @@
 				global.btn[id] = document.createElement("button");
 				global.btn[id].textContent = title;
 				global.btn[id].classList.add("navbar-button");
-				if(id == global.btnSelected) {
-					global.btn[id].classList.add("active");
-				}
+				global.btn[global.btnSelected].classList.add("active");
 
 				global.btn[id].onclick = () => {
 					if(global.btnSelected != id) {
