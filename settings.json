@@ -1,0 +1,34 @@
+[
+	{
+		"name": "Title";
+		"item": "title";
+	},
+	{
+		"name": "Favicon URL";
+		"item": "faviconUrl";
+	},
+	{
+		"name": "Keybind";
+		"item": "keybind";
+	},
+	{
+		"name": "Keybind URL";
+		"item": "keybindUrl";
+	},
+	{
+		"name": "Theme";
+		"item": "theme";
+	},
+	{
+		"name": "CSS URL";
+		"item": "cssUrl";
+	},
+	{
+		"name": "JS URL";
+		"item": "jsUrl";
+	},
+	{
+		"name": "JSON URL";
+		"item": "jsonUrl";
+	}
+]
