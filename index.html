@@ -124,7 +124,7 @@
 
 				button.onclick = () => {
 					settings.forEach(setting => {
-						localStorage.setItem(setting.item, document.getElementById(setting.name).value);
+						localStorage.setItem(setting.item, document.getElementById(setting.item).value);
 					});
 				};
 
