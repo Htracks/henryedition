@@ -15,18 +15,15 @@
 }
 
 [data-theme~="test"] {
-	--background: #ffffff;
-	--background-navbar: #111111;
-	--background-button: #ffffff;
-	--background-button-hover: #444444;
-	--background-button-active: #ffffff;
-	--background-button-active-hover: #4d4dff;
-	--background-container: #ffffff;
-	--background-box: #2a2a2a;
-	--text: #ffffff;
-	--text-hover: #6666ff;
-	--input-text: #ffffff;
-	--input-text-placeholder: #808080;
+	--a: #dddddd;
+	--b: #111111;
+	--c: #1e1e1e;
+	--d: #2a2a2a;
+	--e: #333333;
+	--f: #444444;
+	--g: #808080;
+	--h: #6666ff;
+	--i: #4d4dff;
 }
 
 body {
@@ -55,9 +52,6 @@ body {
 	cursor: pointer;
 }
 
-.settings-button {
-}
-
 .button:hover {
 	background: var(--background-button-hover);
 }
@@ -76,6 +70,21 @@ body {
 	grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
 	gap: 8px;
 	background: var(--background-container);
+}
+
+.settings-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-image: url("images/gear.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32px; 
+    height: 32px;
+    border: none;
+    background-color: transparent;
+	cursor: pointer;
 }
 
 .settings-container {

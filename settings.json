@@ -23,10 +23,5 @@
 		"name": "Theme",
 		"item": "theme",
 		"placeholder": "dark"
-	},
-	{
-		"name": "JSON URL",
-		"item": "jsonUrl",
-		"placeholder": "embed.json"
 	}
 ]

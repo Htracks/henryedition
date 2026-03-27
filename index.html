@@ -23,10 +23,12 @@
 			function createBtn(id, type, title) {
 				global.btn[id] = document.createElement("button");
 				global.btn[id].textContent = title;
-				global.btn[id].classList.add("button");
 				if(type == 1) {
 					global.btn[id].classList.add("settings-button");
+				} else {
+					global.btn[id].classList.add("button");
 				}
+
 				global.btn[id].onclick = () => {
 					if(global.btnSelected !== id) {
 						loadBtn(id);
@@ -111,8 +113,8 @@
 				createBtn(1, 0, "WDBG");
 				createBtn(2, 0, "GN");
 				createBtn(3, 0, "CMG");
-				createBtn(0, 1, "Settings");
-				loadBtn(0);
+				createBtn(0, 1, "");
+				loadBtn(1);
 			}
 
 			async function loadSettings() {
@@ -137,8 +139,7 @@
 			}
 
 			async function loadWDBG() {
-				const json = localStorage.getItem("jsonUrl") || "embed.json";
-				fetch(json)
+				fetch("embed.json")
 					.then(response => response.json())
 					.then(data => {
 						data.forEach(box => {
@@ -162,35 +163,17 @@
 			}
 
 			async function loadCMG() {
-				const popular = false;
-
 				try {
 					const response = await fetch("cmatgame_games_with_levels.json");
 					const data = await response.json();
 					
-					let games = [];
-					if(popular) {
-						let ids = [
-							...data.trendy,
-							...data.top9,
-						]
-						ids = [...new Set(ids)];
-
-						games = ids.map((id) => data.game.find((game) => game.id == id));
-					} else {
-						for(let i = 0; i < data.game.length; ++i) {
-							games.push(data.game[i]);
-						}
+					const games = [];
+					for(let i = 0; i < data.game.length; ++i) {
+						games.push(data.game[i]);
 					}
 						
 					games.forEach(game => {
-						let imgSrc;
-						if(game.si) {
-							imgSrc = "https://www.coolmathgames.com/" + game.si;
-						} else {
-							imgSrc = "https://www.coolmathgames.com/sites/default/files/styles/og_image_game_page/public/" + game.og;
-						}
-
+						const imgSrc = game.si ? "https://www.coolmathgames.com/" + game.si : "https://www.coolmathgames.com/sites/default/files/styles/og_image_game_page/public/" + game.og;
 						createBox(imgSrc, game.title, `embed.html?t=2&id=${game.id}`);
 					});
 				} catch (error) {
