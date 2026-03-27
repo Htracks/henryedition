@@ -17,7 +17,7 @@
 	{
 		"name": "Keybind URL",
 		"item": "keybindUrl",
-		"placeholder": "https://www.google.com/"
+		"placeholder": "about:blank"
 	},
 	{
 		"name": "Theme",
