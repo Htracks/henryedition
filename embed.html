@@ -89,6 +89,7 @@
 					const url = zone.url.replace("{COVER_URL}", coverURL).replace("{HTML_URL}", htmlURL);
 					fetch(url + "?t=" + Date.now()).then(response => response.text()).then(html => {
 						zoneFrame = document.createElement("iframe");
+						zoneFrame.sandbox = "allow-scripts allow-same-origin allow-forms";
 						zoneViewer.appendChild(zoneFrame);
 						zoneFrame.contentDocument.open();
 						zoneFrame.contentDocument.write(html);
