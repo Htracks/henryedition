@@ -1,23 +1,8 @@
 
 :root {
-	--background: #1e1e1e;
-	--background-navbar: #111111;
-	--background-button: #333333;
-	--background-button-hover: #444444;
-	--background-button-active: #6666ff;
-	--background-button-active-hover: #4d4dff;
-	--background-container: #1e1e1e;
-	--background-box: #2a2a2a;
-	--text: #dddddd;
-	--text-hover: #6666ff;
-	--input-text: #dddddd;
-	--input-text-placeholder: #808080;
-}
-
-[data-theme~="test"] {
 	--a: #dddddd;
 	--b: #111111;
-	--c: #1e1e1e;
+	--c: #1a1a1a;
 	--d: #2a2a2a;
 	--e: #333333;
 	--f: #444444;
@@ -26,9 +11,21 @@
 	--i: #4d4dff;
 }
 
+[data-theme~="light"] {
+	--a: #111111;
+	--b: #cccccc;
+	--c: #eeeeee;
+	--d: #dddddd;
+	--e: #999999;
+	--f: #b0b0b0;
+	--g: #808080;
+	--h: #8888ff;
+	--i: #6666ff;
+}
+
 body {
-	background: var(--background);
-	color: var(--text);
+	background: var(--c);
+	color: var(--a);
 	font-family: Arial;
 	margin: 0;
 	padding: 0;
@@ -36,7 +33,7 @@ body {
 
 .navbar {
 	height: 32px;
-	background: var(--background-navbar);
+	background: var(--b);
 	justify-content: left;
 	display: flex;
 	padding: 8px;
@@ -46,22 +43,22 @@ body {
 .button {
 	border: none;
 	border-radius: 4px;
-	background: var(--background-button);
-	color: var(--text);
+	background: var(--e);
+	color: var(--a);
 	padding: 8px;
 	cursor: pointer;
 }
 
 .button:hover {
-	background: var(--background-button-hover);
+	background: var(--f);
 }
 
 .button.active {
-	background: var(--background-button-active);
+	background: var(--h);
 }
 
 .button.active:hover {
-	background: var(--background-button-active-hover);
+	background: var(--i);
 }
 
 .container {
@@ -69,7 +66,7 @@ body {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
 	gap: 8px;
-	background: var(--background-container);
+	background: var(--c);
 }
 
 .settings-button {
@@ -115,25 +112,25 @@ body {
 	padding: 4px;
 	box-sizing: border-box;
 	margin-bottom: 8px;
-	background: var(--background-box);
-	color: var(--input-text);
-	border: 1px solid var(--input-text-placeholder);
+	background: var(--d);
+	color: var(--a);
+	border: 1px solid var(--g);
 
 }
 
 .setting input:focus {
-	outline-color: var(--background-button-active);
+	outline-color: var(--h);
 	outline-width: 4px;
 	outline-offset: 0px;
 	box-shadow: none;
 }
 
 .setting input::placeholder {
-	color: var(--input-text-placeholder);
+	color: var(--g);
 }
 
 .box {
-	background: var(--background-box);
+	background: var(--d);
 	border-radius: 8px;
 	display: flex;
 	flex-direction: column;
@@ -149,7 +146,7 @@ body {
 }
 
 .box a {
-	color: var(--text);
+	color: var(--a);
 	text-align: center;
 	margin-top: 8px;
 	margin-bottom: 0px;
@@ -158,5 +155,5 @@ body {
 }
 
 .box a:hover {
-	color: var(--text-hover);
+	color: var(--h);
 }
