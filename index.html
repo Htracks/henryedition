@@ -13,7 +13,7 @@
 
 			const g_config = {
 				imgLoading: "lazy",
-				btnSelected: 0
+				defaultBtnSelected: 1
 			}
 
 			const g_cache = {};
@@ -165,7 +165,7 @@
 				const fragment = new DocumentFragment();
 
 				try {
-					const data = await fetchData("cmatgame_games_with_levels.json");
+					const data = await fetchData("temp/cmatgame_games_with_levels.json");
 					data.game.forEach(game => {
 						const imgSrc = game.si 
 							? "https://www.coolmathgames.com/" + game.si 
@@ -184,7 +184,7 @@
 				createBtn(1, "WDBG");
 				createBtn(2, "GN");
 				createBtn(3, "CMG");
-				loadBtn(g_config.btnSelected);
+				loadBtn(g_config.defaultBtnSelected);
 			}
 
 			load();
