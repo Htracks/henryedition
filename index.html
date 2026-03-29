@@ -11,11 +11,16 @@
 		<script>
 			document.body.dataset.theme = localStorage.getItem("theme") || "dark";
 
+			const g_config = {
+				imgLoading: "lazy",
+				btnSelected: 0
+			}
+
 			const g_cache = {};
 			const g_navbar = document.getElementById("navbar");
 			const g_container = document.getElementById("container");
 			const g_btn = [];
-			let g_btnSelected = 0;
+			let g_btnSelected = null;
 
 			async function fetchData(url) {
 				if(g_cache[url]) {
@@ -37,11 +42,11 @@
 						loadBtn(id);
 					}
 				}
+				
 				g_navbar.appendChild(g_btn[id]);
 			}
 
 			function loadBtn(id) {
-				g_container.textContent = "";
 				g_container.className = id === 0 ? "settings-container" : "boxes-container";
 				g_btnSelected = id;
 				
@@ -69,15 +74,15 @@
 				}
 			}
 
-			function createBox(imgSrc, name, url) {
+			function createBox(imgSrc, name, url, target) {
 				const box = document.createElement("div");
 				box.className = "box";
 
 				const img = document.createElement("img");
-				img.loading = "lazy";
+				img.loading = g_config.imgLoading;
 				img.src = imgSrc;
 				img.onerror = () => {
-					img.src = "images/error.png";
+					img.src = "assets/error.png";
 				}
 				box.appendChild(img);
 				
@@ -87,10 +92,10 @@
 				a.target = "_blank";
 				box.appendChild(a);
 				
-				g_container.appendChild(box);
+				target.appendChild(box);
 			}
 
-			function createSetting(name, item, placeholder, value) {
+			function createSetting(name, item, placeholder, value, target) {
 				const setting = document.createElement("div");
 				setting.className = "setting";
 
@@ -104,14 +109,16 @@
 				input.id = item;
 				setting.appendChild(input);
 
-				g_container.appendChild(setting);
+				target.appendChild(setting);
 			}
 
 			async function loadSettings() {
+				const fragment = new DocumentFragment();
+				
 				const settings = await fetchData("settings.json");
 
 				settings.forEach(setting => {
-					createSetting(setting.name, setting.item, setting.placeholder, localStorage.getItem(setting.item) || "");
+					createSetting(setting.name, setting.item, setting.placeholder, localStorage.getItem(setting.item) || "", fragment);
 				});
 
 				const button = document.createElement("button");
@@ -124,42 +131,52 @@
 					});
 				};
 
-				g_container.appendChild(button);
+				g_container.replaceChildren(fragment);
 			}
 
 			async function loadWDBG() {
+				const fragment = new DocumentFragment();
+
 				const data = await fetchData("embed.json");
 				data.forEach(box => {
-					createBox(`images/${box.id}.png`, box.title, `embed.html?t=0&id=${box.id}`);
+					createBox(`assets/${box.id}.png`, box.title, `embed.html?t=0&id=${box.id}`, fragment);
 				});
 
-				// g_container.replaceChildren(fragment);
+				g_container.replaceChildren(fragment);
 			}
 
 			async function loadGN() {
+				const fragment = new DocumentFragment();
+
 				try {
 					const zones = await fetchData("https://cdn.jsdelivr.net/gh/gn-math/assets/zones.json");
 					zones.forEach(zone => {
 						const imgSrc = zone.cover.replace("{COVER_URL}", "https://cdn.jsdelivr.net/gh/gn-math/covers@main");
-						createBox(imgSrc, zone.name, `embed.html?t=1&id=${zone.id}`)
+						createBox(imgSrc, zone.name, `embed.html?t=1&id=${zone.id}`, fragment)
 					});
 				} catch (error) {
 					console.error(error);
 				}
+
+				g_container.replaceChildren(fragment);
 			}
 
 			async function loadCMG() {
+				const fragment = new DocumentFragment();
+
 				try {
 					const data = await fetchData("cmatgame_games_with_levels.json");
 					data.game.forEach(game => {
 						const imgSrc = game.si 
 							? "https://www.coolmathgames.com/" + game.si 
 							: "https://www.coolmathgames.com/sites/default/files/styles/og_image_game_page/public/" + game.og;
-						createBox(imgSrc, game.title, `embed.html?t=2&id=${game.id}`);
+						createBox(imgSrc, game.title, `embed.html?t=2&id=${game.id}`, fragment);
 					});
 				} catch (error) {
 					console.error(error);
 				}
+
+				g_container.replaceChildren(fragment);
 			}
 
 			function load() {
@@ -167,7 +184,7 @@
 				createBtn(1, "WDBG");
 				createBtn(2, "GN");
 				createBtn(3, "CMG");
-				loadBtn(1);
+				loadBtn(g_config.btnSelected);
 			}
 
 			load();

@@ -95,7 +95,7 @@ body {
 
 .settings-button {
 	padding: 8px;
-    background-image: url("images/gear.png");
+    background-image: url("assets/gear.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
