@@ -49,7 +49,7 @@
 			g_id = Number(g_params.get("id"));
 
 			function load() {
-				switch(g_type) {
+				switch (g_type) {
 					case 0:
 						loadWDBG();
 						break;
@@ -63,65 +63,73 @@
 			}
 
 			function loadWDBG() {
-				fetch("embed.json").then(response => response.json()).then(data => {
-					const game = data.find(game => game.id == g_id);
-					g_frame.src = game?.link;
-				}).catch(error => {
-					console.error(error);
-				});
+				fetch("embed.json")
+					.then((response) => response.json())
+					.then((data) => {
+						const game = data.find((game) => game.id == g_id);
+						g_frame.src = game?.link;
+					})
+					.catch((error) => {
+						console.error(error);
+					});
 			}
 
 			async function loadGN() {
 				const zonesURL = "https://cdn.jsdelivr.net/gh/gn-math/assets/zones.json";
-				const coverURL = "https://cdn.jsdelivr.net/gh/%67%6e%2d%6d%61%74%68/covers@main";
+				const coverURL =
+					"https://cdn.jsdelivr.net/gh/%67%6e%2d%6d%61%74%68/covers@main";
 				const htmlURL = "https://cdn.jsdelivr.net/gh/%67%6e%2d%6d%61%74%68/html@main";
-				
+
 				let zoneViewer = document.createElement("div");
 				zoneViewer.id = "zoneViewer";
 				document.body.appendChild(zoneViewer);
-				
+
 				const response = await fetch(zonesURL + "?t=" + Date.now());
 				const data = await response.json();
-				const zone = data.find(zone => zone.id == g_id);
-				if(zone.url.startsWith("http")) {
+				const zone = data.find((zone) => zone.id == g_id);
+				if (zone.url.startsWith("http")) {
 					window.open(zone.url, "_blank");
 				} else {
-					const url = zone.url.replace("{COVER_URL}", coverURL).replace("{HTML_URL}", htmlURL);
-					fetch(url + "?t=" + Date.now()).then(response => response.text()).then(html => {
-						g_frame.sandbox = "allow-scripts allow-same-origin allow-forms";
-						zoneViewer.appendChild(g_frame);
-						g_frame.contentDocument.open();
-						g_frame.contentDocument.write(html);
-						g_frame.contentDocument.close();
-						g_frame.style.display = "block";
-						try {
-							const url = new URL(window.location);
-							url.searchParams.set("id", zone.id);
-							history.pushState(null, "", url.toString());
-						} catch(error) {
+					const url = zone.url
+						.replace("{COVER_URL}", coverURL)
+						.replace("{HTML_URL}", htmlURL);
+					fetch(url + "?t=" + Date.now())
+						.then((response) => response.text())
+						.then((html) => {
+							g_frame.sandbox = "allow-scripts allow-same-origin allow-forms";
+							zoneViewer.appendChild(g_frame);
+							g_frame.contentDocument.open();
+							g_frame.contentDocument.write(html);
+							g_frame.contentDocument.close();
+							g_frame.style.display = "block";
+							try {
+								const url = new URL(window.location);
+								url.searchParams.set("id", zone.id);
+								history.pushState(null, "", url.toString());
+							} catch (error) {
+								console.error(error);
+							}
+						})
+						.catch((error) => {
 							console.error(error);
-						}
-
-					}).catch(error => {
-						console.error(error);
-						alert(error);
-					});
+							alert(error);
+						});
 				}
 			}
 
 			async function loadCMG() {
 				const response = await fetch("cmatgame_games_with_levels.json");
 				const data = await response.json();
-				const game = data.game.find(game => game.id == g_id);
+				const game = data.game.find((game) => game.id == g_id);
 
 				try {
 					const url = "https://www.coolmathgames.com/0-" + game.alias + "/play";
-					if(url == null) {
+					if (url == null) {
 						throw new Error();
 					}
 
 					const urlResponse = await fetch(url);
-					if(!urlResponse.ok) {
+					if (!urlResponse.ok) {
 						throw new Error();
 					}
 
@@ -129,14 +137,14 @@
 					const parser = new DOMParser();
 					const doc = parser.parseFromString(html, "text/html");
 					const base = doc.querySelector("base");
-					if(!base) {
+					if (!base) {
 						throw new Error();
 					}
-					
+
 					const baseHref = base.getAttribute("href");
 					const path = baseHref.startsWith("http") ? baseHref : "https:" + baseHref;
 					g_frame.src = path + "index.html";
-				} catch(error) {
+				} catch (error) {
 					console.warn(error);
 					g_frame.src = "https://" + game.alias + ".coolmathgames.com";
 				}

@@ -18,7 +18,7 @@
 			let g_btnSelected = 1;
 
 			async function fetchData(url) {
-				if(g_cache[url]) {
+				if (g_cache[url]) {
 					return g_cache[url];
 				}
 
@@ -33,11 +33,11 @@
 				g_btn[id].textContent = title;
 				g_btn[id].className = id === 0 ? "settings-button" : "button";
 				g_btn[id].onclick = () => {
-					if(g_btnSelected !== id) {
+					if (g_btnSelected !== id) {
 						loadBtn(id);
 					}
-				}
-				
+				};
+
 				g_navbar.appendChild(g_btn[id]);
 			}
 
@@ -45,16 +45,16 @@
 				g_container.textContent = "";
 				g_container.className = id === 0 ? "settings-container" : "boxes-container";
 				g_btnSelected = id;
-				
-				for(let i = 0; i < g_btn.length; ++i) {
-					if(g_btnSelected === i) {
+
+				for (let i = 0; i < g_btn.length; ++i) {
+					if (g_btnSelected === i) {
 						g_btn[i].classList.add("active");
 					} else {
 						g_btn[i].classList.remove("active");
 					}
 				}
-				
-				switch(id) {
+
+				switch (id) {
 					case 0:
 						loadSettings();
 						break;
@@ -75,22 +75,19 @@
 				box.className = "box";
 
 				const img = document.createElement("img");
-
-				// IMAGE LOADING
 				img.loading = "lazy";
-
 				img.src = imgSrc;
 				img.onerror = () => {
 					img.src = "assets/error.png";
-				}
+				};
 				box.appendChild(img);
-				
+
 				const a = document.createElement("a");
 				a.textContent = name;
 				a.href = url;
 				a.target = "_blank";
 				box.appendChild(a);
-				
+
 				target.appendChild(box);
 			}
 
@@ -113,11 +110,17 @@
 
 			async function loadSettings() {
 				const fragment = new DocumentFragment();
-				
+
 				const settings = await fetchData("settings.json");
 
-				settings.forEach(setting => {
-					createSetting(setting.name, setting.item, setting.placeholder, localStorage.getItem(setting.item) || "", fragment);
+				settings.forEach((setting) => {
+					createSetting(
+						setting.name,
+						setting.item,
+						setting.placeholder,
+						localStorage.getItem(setting.item) || "",
+						fragment,
+					);
 				});
 
 				const button = document.createElement("button");
@@ -126,8 +129,11 @@
 				fragment.appendChild(button);
 
 				button.onclick = () => {
-					settings.forEach(setting => {
-						localStorage.setItem(setting.item, document.getElementById(setting.item).value);
+					settings.forEach((setting) => {
+						localStorage.setItem(
+							setting.item,
+							document.getElementById(setting.item).value,
+						);
 					});
 				};
 
@@ -138,8 +144,13 @@
 				const fragment = new DocumentFragment();
 
 				const data = await fetchData("embed.json");
-				data.forEach(box => {
-					createBox(`assets/${box.id}.png`, box.title, `embed.html?t=0&id=${box.id}`, fragment);
+				data.forEach((box) => {
+					createBox(
+						`assets/${box.id}.png`,
+						box.title,
+						`embed.html?t=0&id=${box.id}`,
+						fragment,
+					);
 				});
 
 				g_container.appendChild(fragment);
@@ -149,10 +160,15 @@
 				const fragment = new DocumentFragment();
 
 				try {
-					const zones = await fetchData("https://cdn.jsdelivr.net/gh/gn-math/assets/zones.json");
-					zones.forEach(zone => {
-						const imgSrc = zone.cover.replace("{COVER_URL}", "https://cdn.jsdelivr.net/gh/gn-math/covers@main");
-						createBox(imgSrc, zone.name, `embed.html?t=1&id=${zone.id}`, fragment)
+					const zones = await fetchData(
+						"https://cdn.jsdelivr.net/gh/gn-math/assets/zones.json",
+					);
+					zones.forEach((zone) => {
+						const imgSrc = zone.cover.replace(
+							"{COVER_URL}",
+							"https://cdn.jsdelivr.net/gh/gn-math/covers@main",
+						);
+						createBox(imgSrc, zone.name, `embed.html?t=1&id=${zone.id}`, fragment);
 					});
 				} catch (error) {
 					console.error(error);
@@ -166,10 +182,11 @@
 
 				try {
 					const data = await fetchData("temp/cmatgame_games_with_levels.json");
-					data.game.forEach(game => {
-						const imgSrc = game.si 
-							? "https://www.coolmathgames.com/" + game.si 
-							: "https://www.coolmathgames.com/sites/default/files/styles/og_image_game_page/public/" + game.og;
+					data.game.forEach((game) => {
+						const imgSrc = game.si
+							? "https://www.coolmathgames.com/" + game.si
+							: "https://www.coolmathgames.com/sites/default/files/styles/og_image_game_page/public/" +
+								game.og;
 						createBox(imgSrc, game.title, `embed.html?t=2&id=${game.id}`, fragment);
 					});
 				} catch (error) {
@@ -185,7 +202,6 @@
 				createBtn(2, "GN");
 				createBtn(3, "CMG");
 
-				// DEFAULT SELECTED BUTTON
 				loadBtn(g_btnSelected);
 			}
 
