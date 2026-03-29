@@ -118,7 +118,7 @@
 			}
 
 			async function loadCMG() {
-				const response = await fetch("cmatgame_games_with_levels.json");
+				const response = await fetch("assets/cmatgame_games_with_levels.json");
 				const data = await response.json();
 				const game = data.game.find((game) => game.id == g_id);
 
