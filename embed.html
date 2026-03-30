@@ -96,7 +96,7 @@
 					fetch(url + "?t=" + Date.now())
 						.then((response) => response.text())
 						.then((html) => {
-							g_frame.sandbox = "allow-scripts allow-same-origin allow-forms";
+							g_frame.sandbox = "allow-scripts allow-same-origin allow-forms allow-pointer-lock";
 							zoneViewer.appendChild(g_frame);
 							g_frame.contentDocument.open();
 							g_frame.contentDocument.write(html);
